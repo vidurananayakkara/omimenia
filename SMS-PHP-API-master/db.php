@@ -1,16 +1,15 @@
 <?php
 
-$servername = "localhost";
-$username = "username";
-$password = "password";
+	try {
+		$hostname = "localhost";
+		$username = "root";
+		$password = "";
+		$dbname = "mydb";
+    	$pdo = new PDO ("mysql:host=$hostname;dbname=$dbname","$username","$password");
+  	} catch (PDOException $e) {
+    	echo "Failed to get DB handle: " . $e->getMessage() . "\n";
+    	exit;
+  	}
 
-try {
-    $conn = new PDO("mysql:host=$servername;dbname=myDB", $username, $password);
-    echo "Connected successfully"; 
-    }
-catch(PDOException $e)
-    {
-    echo $e->getMessage();
-}
-
+?>
 
