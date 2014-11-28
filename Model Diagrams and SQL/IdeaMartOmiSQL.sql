@@ -2,16 +2,16 @@ SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 
-DROP SCHEMA IF EXISTS `mydb` ;
-CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci ;
-USE `mydb` ;
+DROP SCHEMA IF EXISTS `techquad_db` ;
+CREATE SCHEMA IF NOT EXISTS `techquad_db` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci ;
+USE `techquad_db` ;
 
 -- -----------------------------------------------------
--- Table `mydb`.`user`
+-- Table `techquad_db`.`user`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `mydb`.`user` ;
+DROP TABLE IF EXISTS `techquad_db`.`user` ;
 
-CREATE TABLE IF NOT EXISTS `mydb`.`user` (
+CREATE TABLE IF NOT EXISTS `techquad_db`.`user` (
   
   `username` VARCHAR(120) NOT NULL,
   `score` INT NOT NULL,
@@ -23,11 +23,11 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`game`
+-- Table `techquad_db`.`game`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `mydb`.`game` ;
+DROP TABLE IF EXISTS `techquad_db`.`game` ;
 
-CREATE TABLE IF NOT EXISTS `mydb`.`game` (
+CREATE TABLE IF NOT EXISTS `techquad_db`.`game` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `gameState` INT NOT NULL,
   `truimph` VARCHAR(50)  NULL,
@@ -45,24 +45,24 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`player`
+-- Table `techquad_db`.`player`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `mydb`.`player` ;
+DROP TABLE IF EXISTS `techquad_db`.`player` ;
 
-CREATE TABLE IF NOT EXISTS `mydb`.`player` (
+CREATE TABLE IF NOT EXISTS `techquad_db`.`player` (
  
   `playerHash` VARCHAR(50) NOT NULL,
   `cardSet` VARCHAR(120) NULL,
   `group` INT NULL,
   `game_id` INT NOT NULL,
-  
-  PRIMARY KEY (`playerHash`,'game_id')
+
+  PRIMARY KEY (`playerHash`,`game_id`)
 ) ENGINE = InnoDB;
 
 -- Dumping structure for table celebrity.sessions
 DROP TABLE IF EXISTS `sessions`;
 
-CREATE TABLE IF NOT EXISTS `mydb`.`sessions` (
+CREATE TABLE IF NOT EXISTS `techquad_db`.`sessions` (
   `sessionsid` varchar(100) NOT NULL,
   `tel` varchar(50) DEFAULT NULL,
   `menu` varchar(50) DEFAULT NULL,

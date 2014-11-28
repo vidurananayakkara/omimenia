@@ -1,10 +1,6 @@
-[28-Nov-2014 10:07:47 Europe/Berlin] PHP Fatal error:  Uncaught exception 'Exception' with message 'Some of the required parameters are not provided' in D:\xamp\htdocs\USSD-PHP-API-master\libs\MoUssdReceiver.php:40
+[28-Nov-2014 17:13:09 Europe/Berlin] PHP Fatal error:  Uncaught exception 'Exception' with message 'Some of the required parameters are not provided' in D:\xamp\htdocs\omimenia\USSD-PHP-API-master\libs\MoUssdReceiver.php:40
 Stack trace:
-#0 D:\xamp\htdocs\USSD-PHP-API-master\ussdap.php(22): UssdReceiver->__construct()
+#0 D:\xamp\htdocs\omimenia\USSD-PHP-API-master\ussdap.php(22): UssdReceiver->__construct()
 #1 {main}
-  thrown in D:\xamp\htdocs\USSD-PHP-API-master\libs\MoUssdReceiver.php on line 40
-[28-Nov-2014 14:58:11 Europe/Berlin] PHP Fatal error:  Uncaught exception 'Exception' with message 'Some of the required parameters are not provided' in D:\xamp\htdocs\USSD-PHP-API-master\libs\MoUssdReceiver.php:40
-Stack trace:
-#0 D:\xamp\htdocs\USSD-PHP-API-master\ussdap.php(22): UssdReceiver->__construct()
-#1 {main}
-  thrown in D:\xamp\htdocs\USSD-PHP-API-master\libs\MoUssdReceiver.php on line 40
+  thrown in D:\xamp\htdocs\omimenia\USSD-PHP-API-master\libs\MoUssdReceiver.php on line 40
+[28-Nov-2014 18:01:34 Europe/Berlin] asdas

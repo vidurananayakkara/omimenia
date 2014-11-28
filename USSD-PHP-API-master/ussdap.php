@@ -78,9 +78,10 @@ if ($ussdOperation  == "mo-init") {
 
         $sql = "select * from user where hash='".$address."'";
         $query = mysql_query($sql);
+        $user=mysql_fetch_array($query);
 
         $row = mysql_num_rows($query);
-        $user=mysql_fetch_array($query);
+
         if($row==0){
 
             $sessionArrary=array( "sessionid"=>$sessionId,"tel"=>$address,"menu"=>"main","pg"=>"","others"=>"");
