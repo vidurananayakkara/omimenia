@@ -226,13 +226,13 @@ function getCurrentHandResult($dbConnection, $gameId,$playerHash){
 
     $message="";
 
-    if($playerGroup =="1"){
+    if($playerGroup =="A"){
         
-        $message = "Win (Team A)'".$group1Marks."' - Lost (Team B)'".$group2Marks."'";
+        $message = "Win '".$group1Marks."' - Lost '".$group2Marks."'";
     }
     else{
         
-        $message = "Win (Team B)'".$group2Marks."' - Lost (Team A)'".$group1Marks."'";
+        $message = "Win '".$group2Marks."' - Lost '".$group1Marks."'";
     
     }
 
