@@ -35,6 +35,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`game` (
   `player2Hash` VARCHAR(50) NULL,
   `player3Hash` VARCHAR(50) NULL,
   `player4Hash` VARCHAR(50) NULL,
+  `currentHand` VARCHAR(50) NULL,
   `round` INT NULL,
   `group1Marks` INT NULL,
   `group2Marks` INT NULL,
