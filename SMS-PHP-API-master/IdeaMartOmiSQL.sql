@@ -38,6 +38,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`game` (
   `round` INT NULL,
   `group1Marks` INT NULL,
   `group2Marks` INT NULL,
+  'next' INT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
