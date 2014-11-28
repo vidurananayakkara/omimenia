@@ -38,8 +38,9 @@ CREATE TABLE IF NOT EXISTS `techquad_db`.`game` (
   `round` INT NULL,
   `group1Marks` INT NULL,
   `group2Marks` INT NULL,
-  PRIMARY KEY (`id`))
-ENGINE = InnoDB;
+  `next` INT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE = InnoDB;
 
 
 
@@ -55,9 +56,16 @@ CREATE TABLE IF NOT EXISTS `techquad_db`.`player` (
   `cardSet` VARCHAR(120) NULL,
   `group` INT NULL,
   `game_id` INT NOT NULL,
+  `place` INT NULL,
 
   PRIMARY KEY (`playerHash`,`game_id`)
 ) ENGINE = InnoDB;
+
+
+INSERT INTO `player` VALUES ('tel:94722545853', 'A1', 0, 1, 1);
+INSERT INTO `player` VALUES ('tel:94722545854', 'S10', 0, 1, 2);
+INSERT INTO `player` VALUES ('tel:94722545856', 'D08', 0, 1, 4);
+INSERT INTO `player` VALUES ('tel:94722545855', 'CA5', 0, 1, 3);
 
 -- Dumping structure for table celebrity.sessions
 DROP TABLE IF EXISTS `sessions`;
