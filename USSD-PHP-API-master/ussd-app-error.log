@@ -1,6 +1,18 @@
-[28-Nov-2014 17:13:09 Europe/Berlin] PHP Fatal error:  Uncaught exception 'Exception' with message 'Some of the required parameters are not provided' in D:\xamp\htdocs\omimenia\USSD-PHP-API-master\libs\MoUssdReceiver.php:40
+[28-Nov-2014 21:39:53 Europe/Berlin] PHP Fatal error:  Cannot redeclare class Core in D:\xamp\htdocs\omimenia\SMS-PHP-API-master\lib\core.php on line 12
+[28-Nov-2014 21:40:18 Europe/Berlin] PHP Fatal error:  Cannot redeclare class Core in D:\xamp\htdocs\omimenia\SMS-PHP-API-master\lib\core.php on line 12
+[28-Nov-2014 21:41:03 Europe/Berlin] PHP Fatal error:  Cannot redeclare class Core in D:\xamp\htdocs\omimenia\SMS-PHP-API-master\lib\core.php on line 12
+[28-Nov-2014 21:41:14 Europe/Berlin] PHP Fatal error:  Cannot redeclare class Core in D:\xamp\htdocs\omimenia\SMS-PHP-API-master\lib\core.php on line 12
+[28-Nov-2014 21:43:56 Europe/Berlin] PHP Warning:  require_once(lib/SMSSender.php): failed to open stream: No such file or directory in D:\xamp\htdocs\omimenia\USSD-PHP-API-master\StartGame.php on line 9
+[28-Nov-2014 21:43:56 Europe/Berlin] PHP Fatal error:  require_once(): Failed opening required 'lib/SMSSender.php' (include_path='.;D:\xamp\php\PEAR') in D:\xamp\htdocs\omimenia\USSD-PHP-API-master\StartGame.php on line 9
+[28-Nov-2014 21:44:53 Europe/Berlin] PHP Fatal error:  Uncaught exception 'Exception' with message 'Some of the required parameters are not provided' in D:\xamp\htdocs\omimenia\USSD-PHP-API-master\libs\MoUssdReceiver.php:40
 Stack trace:
-#0 D:\xamp\htdocs\omimenia\USSD-PHP-API-master\ussdap.php(22): UssdReceiver->__construct()
+#0 D:\xamp\htdocs\omimenia\USSD-PHP-API-master\ussdap.php(23): UssdReceiver->__construct()
 #1 {main}
   thrown in D:\xamp\htdocs\omimenia\USSD-PHP-API-master\libs\MoUssdReceiver.php on line 40
-[28-Nov-2014 18:01:34 Europe/Berlin] asdas
+[28-Nov-2014 21:45:47 Europe/Berlin] kamal
+[28-Nov-2014 21:45:47 Europe/Berlin] kalana
+[28-Nov-2014 21:45:47 Europe/Berlin] jevan
+[28-Nov-2014 21:45:47 Europe/Berlin] titus
+[28-Nov-2014 21:45:48 Europe/Berlin] 4
+[28-Nov-2014 23:08:48 Europe/Berlin] asd
+[28-Nov-2014 23:08:48 Europe/Berlin] 1

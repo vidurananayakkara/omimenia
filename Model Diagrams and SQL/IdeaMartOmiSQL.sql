@@ -12,14 +12,14 @@ USE `techquad_db` ;
 DROP TABLE IF EXISTS `techquad_db`.`user` ;
 
 CREATE TABLE IF NOT EXISTS `techquad_db`.`user` (
-  
+
   `username` VARCHAR(120) NOT NULL,
   `score` INT NOT NULL,
   `hash` VARCHAR(50) NOT NULL,
   `lastLoginTime` DATETIME NULL,
   `status` INT NOT NULL,
   PRIMARY KEY (`hash`))
-ENGINE = InnoDB;
+  ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
@@ -35,12 +35,13 @@ CREATE TABLE IF NOT EXISTS `techquad_db`.`game` (
   `player2Hash` VARCHAR(50) NULL,
   `player3Hash` VARCHAR(50) NULL,
   `player4Hash` VARCHAR(50) NULL,
+  `currentHand` VARCHAR(50) NULL,
   `round` INT NULL,
   `group1Marks` INT NULL,
   `group2Marks` INT NULL,
-  `next` INT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE = InnoDB;
+  'next' INT NULL,
+  PRIMARY KEY (`id`))
+  ENGINE = InnoDB;
 
 
 
@@ -51,34 +52,16 @@ CREATE TABLE IF NOT EXISTS `techquad_db`.`game` (
 DROP TABLE IF EXISTS `techquad_db`.`player` ;
 
 CREATE TABLE IF NOT EXISTS `techquad_db`.`player` (
- 
+
   `playerHash` VARCHAR(50) NOT NULL,
   `cardSet` VARCHAR(120) NULL,
-  `group` INT NULL,
+  `group_ch` CHAR NULL,
   `game_id` INT NOT NULL,
-  `place` INT NULL,
+  'place' INT NULL;
 
-  PRIMARY KEY (`playerHash`,`game_id`)
-) ENGINE = InnoDB;
+PRIMARY KEY (`playerHash`,`game_id`))
 
-
-INSERT INTO `player` VALUES ('tel:94722545853', 'A1', 0, 1, 1);
-INSERT INTO `player` VALUES ('tel:94722545854', 'S10', 0, 1, 2);
-INSERT INTO `player` VALUES ('tel:94722545856', 'D08', 0, 1, 4);
-INSERT INTO `player` VALUES ('tel:94722545855', 'CA5', 0, 1, 3);
-
--- Dumping structure for table celebrity.sessions
-DROP TABLE IF EXISTS `sessions`;
-
-CREATE TABLE IF NOT EXISTS `techquad_db`.`sessions` (
-  `sessionsid` varchar(100) NOT NULL,
-  `tel` varchar(50) DEFAULT NULL,
-  `menu` varchar(50) DEFAULT NULL,
-  `pg` varchar(50) DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
-  `others` varchar(50) DEFAULT NULL,
-  PRIMARY KEY (`sessionsid`)
-) ENGINE=InnoDB;
+ENGINE = InnoDB;
 
 
 
