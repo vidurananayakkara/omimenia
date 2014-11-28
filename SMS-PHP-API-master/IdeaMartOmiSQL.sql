@@ -56,6 +56,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`player` (
   `cardSet` VARCHAR(120) NULL,
   `group` INT NULL,
   `game_id` INT NOT NULL,
+  'place' INT NULL;
   
   PRIMARY KEY (`playerHash`,'game_id'))
   
