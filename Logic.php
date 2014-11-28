@@ -51,4 +51,28 @@
 	
 	
 	**/
+	
+	
+	
+	$cardSet="Spade-9 Diamond-A Diamond-7 Clubs-8";
+$triump = "Spade";
+
+function SplitMessage($cardSet){
+	$tempArray = array();
+	$typeArray = array();
+	$valueArray = array();
+	
+	
+	
+}
+
+
+
+function GetWinner($cardSet,$triump) {
+    echo "$cardSet\n";
+	echo "$triump";
+}
+
+GetWinner($cardSet,$triump);
+
 ?>

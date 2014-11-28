@@ -1,4 +1,3 @@
-<?php
 function GetTriumph($gameID){
 	//query the db
 	//get Triump as gameId
@@ -17,7 +16,7 @@ function GetPlayerNo($playerID,$gameID){
 	//query the db
 	//get the player number
 	
-	return 3;
+	return 1;
 
 }
 
@@ -49,7 +48,7 @@ function that retuns current played cards
 function getCurrent($gameID){
 	
 	//query here
-	return "Spade-9 Diamond-A Diamond-7";
+	return "Spade-9";
 
 }
 
@@ -59,7 +58,7 @@ function GetHand($gameID,$playerID){
 	
 	//query player hand here
 	
-	return "Spade-9 Spade-A Diamond-9"; //query player hand
+	return "Spade-8 Spade-A Diamond-9 Heart-9"; //query player hand
 }
 
 
@@ -188,5 +187,164 @@ function validateMsg($gameID,$playerID,$msg){
 
 }
 
+/*
+After sending to vidura
+*/
 
-?>
+function getNextPlayerNO($playerID,$gameID){
+
+	//query here
+	//return next persone id
+	return 2;
+}
+
+/*
+
+should return next player id
+*/
+function getNextPlayerID($playerID,$gameID){
+
+	//query here
+	//return next player id
+	return "0713222356";
+}
+
+/*
+should edit current played string
+
+*/
+function saveEditedPlay($gameID,$curEdit){
+
+	//query and save
+	return 1;
+}
+
+
+/*
+remove the card from hand
+
+*/
+function removePrevCard($playerID,$gameID,$msg){
+	
+	//get hand
+	$hand = GetHand($gameID,$playerID);
+	
+	echo "This is hand $hand \n";
+	
+	//explode and remove
+	$HandAr = explode(" ",$hand);
+	
+	$newHand = "";
+	
+	//iterate and remove
+	
+	$arrlength = count($HandAr);
+	
+	echo "Going to edit this $arrlength\n";
+	
+	for($x = 0; $x < $arrlength; $x++) {
+		
+		$tmp = $HandAr[$x];
+		echo "$tmp  $msg \n";
+		if(strcmp(strtolower($tmp),strtolower($msg))==0){
+			echo "Found removable object";
+			
+		}else{
+			$newHand=$newHand." ".$tmp;
+		}
+	
+	}
+	
+	//Now save $newHand
+	echo "$newHand \n";
+	
+	
+	
+	
+}
+
+
+/*
+Create the sending message for Unique Player
+
+*/
+
+
+function CreateReply($playerID,$gameID,$msg){
+	
+	//Validate msg
+	echo "Going to validate\n";
+	$validate = validateMsg($gameID,$playerID,$msg);
+	if($validate == 0){
+		return 0;
+	}
+	else{
+		
+		echo "Validate passed\n";
+		$msgNew = "";
+		
+		//get the Next Person in the list
+		
+		$NextPlayerNO = getNextPlayerNo($playerID,$gameID);
+		
+		echo "Next Player $NextPlayerNO \n";
+		
+		//Get next player ID
+		
+		$NextPlayerID = getNextPlayerID($playerID,$gameID);
+		
+		echo "Next Playerid $NextPlayerID \n";
+	
+		//Add triumph
+		$msgNew = $msgNew.GetTriumph($gameID)." |";
+		
+		echo "msg $msgNew  \n";
+		
+		//Add group
+		$msgNew = $msgNew."Team ".GetTeam($NextPlayerID,$gameID)." |";
+		
+		//Add player No
+		$msgNew = $msgNew."Player ".getNextPlayerNO($playerID,$gameID)."\n";
+		
+		//Add win lost message
+		
+		$msgNew = $msgNew.getWinLost($gameID,$NextPlayerID)."\n\n";
+		
+		//adding current playing string
+		
+		$curPlayed = getCurrent($gameID);
+		
+		//edit it
+		$curEdit = $curPlayed . " ".$msg;
+		
+		
+		//Save current edited play
+		saveEditedPlay($gameID,$curEdit);
+		
+		
+		//edit message with curent edit
+		$msgNew = $msgNew.$curEdit."\n";
+		
+		//remove previous person hand
+		removePrevCard($playerID,$gameID,$msg);
+		
+		
+		//New card hand
+		$newCardHand = GetHand($gameID,$NextPlayerID);
+		
+		
+		//add it into message
+		$msgNew = $msgNew.$newCardHand;
+		
+		return $msgNew;
+		
+	
+	}
+	
+	
+}
+
+
+$replymsg = CreateReply("254425","2435245","Spade-8");
+
+echo "$replymsg";
