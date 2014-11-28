@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="239683c7-7b61-432e-b423-ac312fa1b2ed" name="Default" comment="" />
+    <ignored path="USSD-PHP-API-master.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="USSD-PHP-API-master" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="ussdap.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ussdap.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="11" column="18" selection-start="219" selection-end="219" vertical-scroll-proportion="0.33512545" vertical-offset="0" max-vertical-offset="3128">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="operationsClass.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/class/operationsClass.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="34" column="32" selection-start="939" selection-end="939" vertical-scroll-proportion="-9.692307" vertical-offset="326" max-vertical-offset="884">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ussd-app-error.log" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ussd-app-error.log">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="6" column="0" selection-start="403" selection-end="403" vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="306">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="core.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/libs/core.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="24" column="27" selection-start="783" selection-end="783" vertical-scroll-proportion="0.0" vertical-offset="408" max-vertical-offset="612">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="db.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/db.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="7" column="0" selection-start="132" selection-end="132" vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="221">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindManager">
+    <FindUsagesManager>
+      <setting name="OPEN_NEW_TAB" value="false" />
+    </FindUsagesManager>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="changedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/class/operationsClass.php" />
+        <option value="$PROJECT_DIR$/ussd-app-error.log" />
+        <option value="$PROJECT_DIR$/ussdHandling.php" />
+        <option value="$PROJECT_DIR$/ussdap.php" />
+      </list>
+    </option>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="USSD-PHP-API-master" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="USSD-PHP-API-master" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="USSD-PHP-API-master" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="USSD-PHP-API-master" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="USSD-PHP-API-master" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="libs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="USSD-PHP-API-master" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="USSD-PHP-API-master" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="class" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../omimenia" />
+    <property name="FullScreen" value="false" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
+      <method />
+    </configuration>
+    <list size="0" />
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="239683c7-7b61-432e-b423-ac312fa1b2ed" name="Default" comment="" />
+      <created>1417027943772</created>
+      <updated>1417027943772</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2489019" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="myTodoPanelSettings">
+      <TodoPanelSettings />
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/db.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="0" selection-start="132" selection-end="132" vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="221">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sessions.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="14" selection-start="818" selection-end="818" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="578">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ussdap.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="0" selection-start="199" selection-end="199" vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="2040">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/class/operationsClass.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="833">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/MoUssdReceiver.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1513" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ussd-app-error.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="306">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/core.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="0" selection-start="796" selection-end="796" vertical-scroll-proportion="0.0" vertical-offset="476" max-vertical-offset="493">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="30" selection-start="90" selection-end="99" vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="221">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/MoUssdReceiver.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="27" selection-start="547" selection-end="547" vertical-scroll-proportion="-0.12903225" vertical-offset="208" max-vertical-offset="1343" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="0" selection-start="132" selection-end="132" vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="221">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/core.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="27" selection-start="783" selection-end="783" vertical-scroll-proportion="0.0" vertical-offset="408" max-vertical-offset="612">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ussd-app-error.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="0" selection-start="403" selection-end="403" vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="306">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/Log.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="2" selection-start="485" selection-end="485" vertical-scroll-proportion="0.3655914" vertical-offset="0" max-vertical-offset="558" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/class/operationsClass.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="32" selection-start="939" selection-end="939" vertical-scroll-proportion="-9.692307" vertical-offset="326" max-vertical-offset="884">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sessions.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="9" selection-start="633" selection-end="633" vertical-scroll-proportion="0.37842464" vertical-offset="0" max-vertical-offset="584">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ussdap.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="18" selection-start="219" selection-end="219" vertical-scroll-proportion="0.33512545" vertical-offset="0" max-vertical-offset="3128">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
+
