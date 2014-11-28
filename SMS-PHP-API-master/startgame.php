@@ -74,7 +74,7 @@ unset($query);*/
 /// GET The next card player
 /// 
 
-/*function getNextCardPlay($dbConnection, $gameId, $currentPlayerPlace) {
+function getNextCardPlay($dbConnection, $gameId, $currentPlayerPlace) {
 
     $nextPlayer = 0;
 
@@ -92,14 +92,14 @@ unset($query);*/
     return $result = $sqlQuery->fetch(PDO::FETCH_ASSOC);
 }
 
-echo var_dump(getNextCardPlay($pdo, 1, 1)); // Example function*/
+// echo var_dump(getNextCardPlay($pdo, 1, 1)); // Example function
 
 
 ///
 /// GET The winner of the round and set the player numbers
 /// 
 
-/*function setPlayerPlaceNumbers($dbConnection, $gameId, $winnerHash) {
+function setPlayerPlaceNumbers($dbConnection, $gameId, $winnerHash) {
 
     $winnerQuery = $dbConnection->prepare("SELECT * FROM player WHERE game_id='".$gameId."' AND playerHash='".$winnerHash."'");
     $winnerQuery->execute();
@@ -143,17 +143,267 @@ function array_shift_circular(array $array, $steps = 1)
     return array_merge(array_slice($array, $steps),array_slice($array, 0, $steps));
 }
 
-setPlayerPlaceNumbers($pdo, 1, 'tel:94722545855'); // demo*/
+// setPlayerPlaceNumbers($pdo, 1, 'tel:94722545855'); // demo
 
 
 ///////////////////////////////////////////////////////////////////////////
 ///
-///GET
+///GET truimph of the game
 ///
 
+function GetTriumph($dbConnection, $gameId){
+
+    $truimphQuery = $dbConnection->prepare("SELECT truimph FROM game WHERE id='".$gameId."'");
+    $truimphQuery->execute();
+
+    $truimph = $truimphQuery->fetch(PDO::FETCH_ASSOC);
+
+    return $truimph["truimph"];
+}
+
+// GetTriumph($pdo, 1); // demo
+
+///////////////////////////////////////////////////////////////////////////
+///
+///GET team of a player playing a game
+///
+
+function GetTeam($dbConnection, $playerHash,$gameId){
+
+    $teamQuery = $dbConnection->prepare("SELECT * FROM player WHERE game_id='".$gameId."' AND playerHash='".$playerHash."'");
+    $teamQuery->execute();
+
+    $group = $teamQuery->fetch(PDO::FETCH_ASSOC);
+
+    return $group["group"];
+}
+
+/*echo GetTeam($pdo, "tel:94722545854", 1); // demo
+
+// Null check example
+if(is_null(GetTeam($pdo, "tel:94722545854", 1))){
+    echo "Yes, done";
+}*/
+
+///////////////////////////////////////////////////////////////////////////
+///
+///GET team of a player place
+///
+
+function GetPlayerPlace($dbConnection, $playerHash,$gameId){
+
+    $playerPlace = $dbConnection->prepare("SELECT place FROM player WHERE game_id='".$gameId."' AND playerHash='".$playerHash."'");
+    $playerPlace->execute();
+
+    $place = $playerPlace->fetch(PDO::FETCH_ASSOC);
+
+    return $place["place"];
+
+}
+
+// echo GetPlayerPlace($pdo, "tel:94722545854", 1); // demo
+
+///////////////////////////////////////////////////////////////////////////
+///
+///GET game current hand result
+///
+
+function getCurrentHandResult($dbConnection, $gameId,$playerHash){        
+
+    $marksQuery = $dbConnection->prepare("SELECT * FROM game WHERE id='".$gameId."'");
+    $marksQuery->execute();
+
+    $marksResult = $marksQuery->fetch(PDO::FETCH_ASSOC);
+    $group1Marks = $marksResult["group1Marks"];
+    $group2Marks = $marksResult["group2Marks"];
 
 
+    $playerGroupQuery = $dbConnection->prepare("SELECT * FROM player WHERE game_id='".$gameId."' AND playerHash='".$playerHash."'");
+    $playerGroupQuery->execute();
 
+    $playerGroupResult = $playerGroupQuery->fetch(PDO::FETCH_ASSOC);
+    $playerGroup = $playerGroupResult["group"];
+
+    $message="";
+
+    if($playerGroup =="1"){
+        
+        $message = "Win (Team A)'".$group1Marks."' - Lost (Team B)'".$group2Marks."'";
+    }
+    else{
+        
+        $message = "Win (Team B)'".$group2Marks."' - Lost (Team A)'".$group1Marks."'";
+    
+    }
+
+    return $message;
+}
+
+// echo getCurrentHandResult($pdo,1, "tel:94722545854"); // demo
+
+///////////////////////////////////////////////////////////////////////////
+///
+///GET current hand on desk
+///
+
+function getCurrentHandOnDesk($dbConnection,$gameId){
+    
+    $query = $dbConnection->prepare("SELECT currentHand FROM game WHERE id='".$gameId."'");
+    $query->execute();
+
+    $result = $query->fetch(PDO::FETCH_ASSOC);
+    $currentHand = $result["currentHand"];
+
+    return $currentHand;
+}
+
+// echo getCurrentHandOnDesk($pdo, 1);
+
+
+///////////////////////////////////////////////////////////////////////////
+///
+///GET player hand
+///
+
+function GetPlayerHand($dbConnection,$gameId,$playerHash){
+    
+    $query = $dbConnection->prepare("SELECT cardSet FROM player WHERE game_id='".$gameId."' AND playerHash='".$playerHash."'");
+    $query->execute();
+
+    $result = $query->fetch(PDO::FETCH_ASSOC);
+    $playerHand = $result["cardSet"];
+
+    return $playerHand;
+}
+
+// echo GetPlayerHand($pdo, 1, "tel:94722545854");
+
+
+/*
+validate msg using first card
+
+*/
+
+// Complete
+function validProper($HandArray,$gameID,$playerID,$msg){
+
+    //if he is first player then no validation should done
+    $player =GetPlayerNo($playerID,$gameID);
+    
+    if($player==1){
+        return 1;
+    }
+    else{
+        //then validate as first card
+        $currentCards = getCurrent($gameID);
+        $currentCards = strtolower($currentCards);
+        
+        //separate values
+        $curArray = explode(" ",$currentCards);
+        
+        //get the fist value
+        
+        $firstCard = $curArray[0];
+        
+        //get the type of first
+        
+        $firstAr = explode("-",$firstCard);
+        
+        //Now I have the first type
+        $firstType = $firstAr[0];
+        
+        
+        
+        $HaveCard=0;
+        
+        //Iterate through HandArray
+        $arrlength = count($HandArray);
+        for($x = 0; $x < $arrlength; $x++) {
+            
+            $tmp = explode("-",$HandArray[$x]);
+            $tmpType = strtolower($tmp[0]);
+            
+            //compare with first card
+            if(strcmp($firstType,$tmpType)==0){
+                $HaveCard=1;
+            }
+            
+        }
+        if($HaveCard==0){
+            //He don't have the card
+            //so cannot validate
+            //all are acceptable
+            return 1;
+            
+        }
+        else{
+            //He have card
+            //check his message is this type
+            
+            $msgExp = explode("-",$msg);
+            $msgNow = strtolower($msgExp[0]);
+            
+            if(strcmp($msgNow,$firstType)==0){
+                //He is playing correct card
+                return 1;
+            }
+            else{
+                return 0;
+            }
+        }
+        
+        
+        
+    }
+    
+}
+
+// Complete
+function validateMsg($gameID,$playerID,$msg){
+    
+    //simple message
+    $msg = strtolower($msg);
+    
+    //get hand from db do not query here
+    $UserHand = GetHand($gameID,$playerID);
+    
+    //get array from it
+    $HandArray = explode(" ",$UserHand);
+    
+    //Valid Entry
+    $validFirst = 0;
+    
+    $arrlength = count($HandArray);
+    for($x = 0; $x < $arrlength; $x++) {
+        
+        //check in array
+        if(strcmp($msg,strtolower($HandArray[$x]))==0){
+        
+            //so user entered what he have
+            $validFirst = 1;
+        }
+        
+    }
+    
+    if($validFirst==0){
+        //invalid message
+        return 0;
+    }
+    
+    //now check he is intered an unproper card
+    
+    $validSecond = validProper($HandArray,$gameID,$playerID,$msg);
+    
+    if($validSecond ==0){
+        return 0;
+    
+    }else{
+        return 1;
+    }
+    
+    
+
+}
 
 
 ?>
