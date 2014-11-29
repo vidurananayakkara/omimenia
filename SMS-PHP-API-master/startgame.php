@@ -175,7 +175,7 @@ function GetTeam($dbConnection, $playerHash,$gameId){
 
     $group = $teamQuery->fetch(PDO::FETCH_ASSOC);
 
-    return $group["group"];
+    return $group["group_ch"];
 }
 
 /*echo GetTeam($pdo, "tel:94722545854", 1); // demo
@@ -222,7 +222,7 @@ function getCurrentHandResult($dbConnection, $gameId,$playerHash){
     $playerGroupQuery->execute();
 
     $playerGroupResult = $playerGroupQuery->fetch(PDO::FETCH_ASSOC);
-    $playerGroup = $playerGroupResult["group"];
+    $playerGroup = $playerGroupResult["group_ch"];
 
     $message="";
 
