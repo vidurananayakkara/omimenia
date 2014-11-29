@@ -285,17 +285,17 @@ validate msg using first card
 */
 
 // Complete
-function validProper($HandArray,$gameID,$playerID,$msg){
+function validProper($dbConnection,$HandArray,$gameID,$playerID,$msg){
 
     //if he is first player then no validation should done
-    $player =GetPlayerNo($playerID,$gameID);
+    $player = GetPlayerPlace($dbConnection,$playerID,$gameID);
     
     if($player==1){
         return 1;
     }
     else{
         //then validate as first card
-        $currentCards = getCurrent($gameID);
+        $currentCards = getCurrentHandOnDesk($dbConnection, $gameID);
         $currentCards = strtolower($currentCards);
         
         //separate values
@@ -358,14 +358,15 @@ function validProper($HandArray,$gameID,$playerID,$msg){
     
 }
 
-// Complete
-function validateMsg($gameID,$playerID,$msg){
+function validateMsg($dbConnection,$gameID,$playerID,$msg){
     
     //simple message
     $msg = strtolower($msg);
     
     //get hand from db do not query here
-    $UserHand = GetHand($gameID,$playerID);
+    $UserHand = GetPlayerHand($dbConnection,$gameID,$playerID);
+
+    echo $UserHand;
     
     //get array from it
     $HandArray = explode(" ",$UserHand);
@@ -392,7 +393,7 @@ function validateMsg($gameID,$playerID,$msg){
     
     //now check he is intered an unproper card
     
-    $validSecond = validProper($HandArray,$gameID,$playerID,$msg);
+    $validSecond = validProper($dbConnection,$HandArray,$gameID,$playerID,$msg);
     
     if($validSecond ==0){
         return 0;
@@ -400,10 +401,178 @@ function validateMsg($gameID,$playerID,$msg){
     }else{
         return 1;
     }
-    
-    
 
 }
+
+
+
+
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////
+///
+
+
+/*
+After sending to vidura
+*/
+
+function getNextPlayerNO($dbConnection, $currentPlayerPlace,$gameId){
+
+    $nextCardPlayer = getNextCardPlay($dbConnection, $gameId, $currentPlayerPlace);
+
+    return $nextCardPlayer["place"];
+}
+
+/*
+
+should return next player id
+*/
+function getNextPlayerID($dbConnection,$currentPlayerPlace,$gameID){
+    
+    $nextCardPlayerHash = getNextCardPlay($dbConnection, $gameID, $currentPlayerPlace);
+
+    return $nextCardPlayerHash["playerHash"];
+}
+
+/*
+should edit current played string
+
+*/
+function saveEditedPlay($dbConnection,$gameID,$curEdit){
+
+    //query and save
+    return 1;
+}
+
+
+/*
+remove the card from hand
+
+*/
+function removePrevCard($dbConnection,$playerID,$gameID,$msg){
+    
+    //get hand
+    $hand = GetPlayerHand($dbConnection,$gameID,$playerID);
+    
+    echo "This is hand $hand \n";
+    
+    //explode and remove
+    $HandAr = explode(" ",$hand);
+    
+    $newHand = "";
+    
+    //iterate and remove
+    
+    $arrlength = count($HandAr);
+    
+    echo "Going to edit this $arrlength\n";
+    
+    for($x = 0; $x < $arrlength; $x++) {
+        
+        $tmp = $HandAr[$x];
+        echo "$tmp  $msg \n";
+        if(strcmp(strtolower($tmp),strtolower($msg))==0){
+            echo "Found removable object";
+            
+        }else{
+            $newHand=$newHand." ".$tmp;
+        }
+    
+    }
+    
+    //Now save $newHand
+    echo "$newHand \n";
+
+}
+
+
+/*
+Create the sending message for Unique Player
+
+*/
+
+
+function CreateReply($dbConnection,$playerID,$gameID,$msg){
+    
+    //Validate msg
+    echo "Going to validate\n";
+    $validate = validateMsg($dbConnection,$gameID,$playerID,$msg);
+    if($validate == 0){
+        return 0;
+    }
+    else{
+        
+        echo "Validate passed\n";
+        $msgNew = "";
+        
+        //get the Next Person in the list
+        $currentPlayerPlace = GetPlayerPlace($dbConnection, $playerID,$gameID);
+        $NextPlayerNO = getNextPlayerNo($dbConnection,$currentPlayerPlace,$gameID);
+        
+        echo "Next Player $NextPlayerNO \n";
+        
+        //Get next player ID
+        
+        $NextPlayerID = getNextPlayerID($dbConnection,$currentPlayerPlace,$gameID);
+        
+        echo "Next Playerid $NextPlayerID \n";
+    
+        //Add triumph
+        $msgNew = $msgNew.GetTriumph($dbConnection,$gameID)." |";
+        
+        echo "msg $msgNew  \n";
+        
+        //Add group
+        $msgNew = $msgNew."Team ".GetTeam($dbConnection,$NextPlayerID,$gameID)." |";
+        
+        //Add player No
+        $msgNew = $msgNew."Player ".$NextPlayerNO."\n";
+        
+        //Add win lost message
+        
+        $msgNew = $msgNew.getCurrentHandResult($dbConnection,$gameID,$NextPlayerID)."\n\n";
+        
+        //adding current playing string
+        $curPlayed = getCurrentHandOnDesk($dbConnection,$gameID);
+        
+        //edit it
+        $curEdit = $curPlayed . " ".$msg;
+        
+        
+        //Save current edited play
+        saveEditedPlay($dbConnection,$gameID,$curEdit);
+        
+        
+        //edit message with curent edit
+        $msgNew = $msgNew.$curEdit."\n";
+        
+        //remove previous person hand
+        removePrevCard($dbConnection,$playerID,$gameID,$msg);
+        
+        
+        //New card hand
+        $newCardHand = GetPlayerHand($dbConnection,$gameID,$NextPlayerID);
+        
+        
+        //add it into message
+        $msgNew = $msgNew.$newCardHand;
+        
+        return $msgNew;
+        
+    
+    }
+    
+    
+}
+
+
+$replymsg = CreateReply($pdo,"tel:94722545854","1","Spade-8");
+
+echo "$replymsg";
 
 
 ?>

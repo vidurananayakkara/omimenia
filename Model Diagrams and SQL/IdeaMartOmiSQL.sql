@@ -74,7 +74,7 @@ CREATE TABLE IF NOT EXISTS `techquad_db`.`player` (
 
 
 INSERT INTO `player` VALUES ('tel:94722545853', 'A1', "A", 1, 1);
-INSERT INTO `player` VALUES ('tel:94722545854', 'S10', "B", 1, 2);
+INSERT INTO `player` VALUES ('tel:94722545854', 'Spade-8 Spade-A Diamond-9 Heart-9', "B", 1, 2);
 INSERT INTO `player` VALUES ('tel:94722545856', 'D08', "A", 1, 4);
 INSERT INTO `player` VALUES ('tel:94722545855', 'CA5', "B", 1, 3);
 
